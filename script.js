@@ -4,7 +4,18 @@ document.body.appendChild(getSumBtn);
 
 const getSum = () => {
 //Add your code here
-  
+  let pricesEl = document.getElementsByClassName('price');
+  let sum = 0;
+  for (let i = 0; i < pricesEl.length; i++) {
+    let x = Number(pricesEl[i].innerText);
+    sum += x;
+  }
+    // console.log(`TotalSum: ${sum}`);
+    const emptyRow = document.createElement("tr");
+    emptyRow.innerHTML = `
+    <td></td><td>${sum}</td>
+    `
+    document.getElementById('tab').appendChild(emptyRow);
 };
 
 getSumBtn.addEventListener("click", getSum);
