@@ -15,7 +15,10 @@ const getSum = () => {
     emptyRow.innerHTML = `
     <td></td><td>${sum}</td>
     `
-    document.getElementById('tab').appendChild(emptyRow);
+    // document.getElementById('tab').appendChild(emptyRow);
+    document.getElementById('tab').innerHTML += `<tr id="ans">
+    <td></td><td>${sum}</td>
+        </tr>`
 };
 
 getSumBtn.addEventListener("click", getSum);
